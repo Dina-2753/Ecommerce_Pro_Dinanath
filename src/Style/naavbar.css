@@ -1,0 +1,31 @@
+.bg-white {
+    background-color: white;
+}
+
+.parents {
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    justify-content: space-around;
+}
+
+.logo img {
+    width: 30px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.navlist {
+    padding: 0px 7px;
+    margin: 3px;
+    display: inline-block;
+}
+
+.underline {
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 8px;
+    font-family:'Courier New', Courier, monospace;
+    
+}

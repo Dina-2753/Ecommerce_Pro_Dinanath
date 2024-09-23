@@ -1,0 +1,84 @@
+.bgbodytertiary {
+    background-color: #fff;
+    height: 90px;
+}
+
+#logo {
+    position: relative;
+    left: 50px;
+}
+
+.ullist li a {
+    position: relative;
+    left: 60px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+.nav-item a {
+    margin: 20px;
+    color: #282c3f;
+    cursor: pointer;
+}
+
+.search input {
+    position: relative;
+    left: 90px;
+    top: 20px;
+    width: 500px;
+}
+
+#item img {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* .cards a img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    cursor: pointer;
+
+} */
+
+.cards img {
+    max-width: 50rem;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    cursor: pointer;
+    /* mix-blend-mode: color-dodge; */
+}
+
+
+
+.wordrode {
+    display: flex;
+    justify-content: center;
+}
+
+.wordrode h2 {
+    color: rgb(231, 61, 61);
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.seare h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(118, 187, 118);
+}
+
+.essence {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.teen {
+    background-image: url("https://www.itln.in/h-upload/2022/05/27/26062-myntra-introduces-under-48-hour-delivery.webp");
+}
