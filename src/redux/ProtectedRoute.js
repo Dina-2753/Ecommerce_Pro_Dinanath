@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
-import { jwtDecode } from 'jwt-decode';
+
+
+
 
 
 
@@ -17,19 +19,21 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
     useEffect(() => {
         const validateToken = async () => {
             try {
-                const cookieObj = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')));
-                const jwtToken = cookieObj.jwToken; // Example: Accessing 'jwtToken' cookie
+                // const cookieObj = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')));
+                // console.log("first", cookieObj)
+                // const jwtToken = cookieObj.jwToken; // Example: Accessing 'jwtToken' cookie
 
-                const yourCookie = document.cookie.split(';').find(cookie => cookie.includes('jwtoken'));
-                const decoded = jwtDecode(yourCookie.split('=')[1]);
+                // const yourCookie = document.cookie.split(';').find(cookie => cookie.includes('jwttoken'));
+                // const decoded = jwtDecode(yourCookie.split('=')[1]);
 
-                const user = {
-                    email: decoded.email,
-                    name: decoded.name,
-                    _id: decoded._id
+                // const user = {
+                //     email: decoded.email,
+                //     name: decoded.fname,
+                //     _id: decoded._id
 
-                }
-          
+                // }
+
+
                 // Send token to server for validation
                 const response = await fetch(`${API_Key}/tokenvalidated`, {
                     method: "GET",
@@ -43,14 +47,14 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
                     credentials: "include",
                 });
                 const data = await response.json()
-                console.log(data.user._id, "dinanananannji22222", response.ok && data.user._id == user._id)
-                if (response.ok && data.user._id == user._id) {
-                
+                console.log("first api data", data)
+                // console.log(data.user._id, "dinanananannji22222", response.ok && data.user._id == user._id)
+
+                if (data.success) {
+
                     setIsValidToken(true);
                 }
-                // else if(token=){
 
-                // }
                 else if (response.status = 401) {
                     setIsValidToken(false);
                 }
@@ -80,4 +84,3 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
 }
 
 export default ProtectedRoute;
-
