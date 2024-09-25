@@ -9,7 +9,7 @@ const LoginModal = ({ showModal, closeModal, message }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <h3>Login Failed</h3>
+                <h3>Login Failed...</h3>
                 <p>{message}</p>
                 <button onClick={closeModal}>Close</button>
             </div>
